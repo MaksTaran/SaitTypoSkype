@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PartsZip</title>
+    <link rel="stylesheet" href="companyStyle.css">
+    <link rel="stylesheet" href="../allStyle.css">
+    <link rel="icon"  href="../images/logoicon.png">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<!-- https://www.figma.com/file/Cxs4NCu7MNi0vfgwRPSYWJ/Parts?node-id=0%3A1 -->
+<body >
+  <header>
+      <div class="headerContainer">
+        <div class="logo">
+           
+            <p class="logoText">PartsZip</p>
+        </div>
+            <div class="buttonContainer">
+                <button class="themChange  buttonBorder"></button>
+                    <button class="service buttonBorder"> <img src="../images/service.png" alt="">Сервисы</button>
+                    <button class="userImg buttonBorder"></button>
+                    <button class="close"></button>
+            </div>
+      </div>
+  </header>
+  <div id="app">
+  <main >
+    
+      <div class="mainContainer"> 
+        <div class="leftSection">
+            <div class="userInfoContainer">
+            <div class="fonUser">
+            </div>
+                <div class="userInfo">
+                    <img src="../images/userMain.png" class="userImgMain" alt="">
+                    <p class="userName">Дмитрий Владимиров</p>
+                    <p class="status">Пользователь</p>
+                </div>
+            </div>
+            <div class="infoList">
+                <div class="infoBlockList">
+                    <div class="number li">+7(994)948-38-09  </div>
+                    <div class="mail li">  dendblee@gmail.com</div>
+                    <div class="date li">  18.08.1993        </div>
+                    <div class="serviceCenter li"> <p class="serviceText"> RemBrand</p> <p class="serviceTextText"> Сервисный центр </p> </div>
+                    <div class="exitMain"><div class="exitMainFoto"><img src="../images/exitMain.png" class="exitMainImg" alt=""></div><div class="exitText">Выйти из аккаунта</div></div>
+                </div>
+                
+            </div>
+        </div>
+    <div class="mainIndex">
+        <div class="mainIndexContainer">
+            <div class="mainHad">
+                <a href="../index/index.html">
+                <div class="mainHadText "> 
+                    Персональная информация
+                </div>
+                </a>
+                <a href="../personal/personal.html">
+                <div class="mainHadText "> 
+                    Учетная запись
+                </div>
+                </a>
+                <a href="../company/company.html">
+                <div class="mainHadText personalInfoHad"> 
+                    Мои организации
+                </div>
+                </a>
+            </div>
+            <div class="mainInfoStart">
+                Редактировать или создать организацию 
+            </div>
+            <div class="containerInfo">
+                    <div class="mainInfo">
+                        <div class="headChangeCompany">
+                            <div class="imgCompany"><img src="../images/fotoCompany.png" alt="Фото компании"><p class="nameCompany">RemBrand</p></div>
+                            <div class="changeCompany">
+                                <p class="countWorkers">5 участников</p>
+                                <li class="menuItem widthSubMenu"  id="selectCompany" >
+                                    <a href="#" class="menuItem-link menuItemCompany " data-scroll @click="visibleCompany= !visibleCompany,rotateCompany= !rotateCompany">
+    
+                                     {{selectedCompany}}
+                                        <img src="../images/selectCompany.png" alt="img" class="imgArrowCompany" :class="submenuCompanyArrow" >
+                                    </a>
+                                        <ul class="submenu submenuCompany" v-if="visibleCompany" >
+                                            <li class="submenuItem" v-for="punktCompany of punktsCompany" @click="punktCompanySelect(punktCompany)" >
+                                                <a href="#" class="submenuLink ">{{punktCompany.name}}</a>
+                                            </li>
+                       
+                                        </ul>
+                                </li>
+                            </div>
+                        </div>    
+                        <div class="lineContainer">
+                            <div class="line"></div>
+                        </div>
+                        <div class="changeWorkers">
+                            <div class="workerInfo">
+                                <img src="../images/fotoWorker.png" class="fotoWorker" alt="">
+                                    <div class="workerText"><p>Анна Григорьева</p>
+                                        <p class="serviceTextText marginText">Пользователь</p>
+                                    </div> 
+                            </div>
+                            
+                        </div>
+                        <div class="changeWorkersRole">
+                            <!-- выпадающий список -->
+                            <p class="changeRoleText">Роль пользователя</p>
+                           <!-- Кастомный список -->
+                            <li class="menuItem widthSubMenu"  id="selectRole">
+                                <a href="#" class="menuItem-link " data-scroll  @click="visible= !visible, rotate= !rotate">
+
+                                 {{selected}}
+                                    <img src="../images/selectRole.png" alt="img" :class="submenuArrow" >
+                                </a>
+                                    <ul class="submenu" v-if="visible" >
+                                        <li class="submenuItem" v-for="punkt of punkts" @click="punktSelect(punkt)" >
+                                            <a href="#" class="submenuLink ">{{punkt.name}}</a>
+                                        </li>
+            
+                                    </ul>
+                            </li>
+                      
+
+                        </div>
+                    </div>
+                    <button class="saveChanges"><img src="../images/buttonSave.png" alt=""> Сохранить изминения</button>
+            </div>
+               
+               
+        </div>
+    </div>
+      </div>
+    
+  </main> 
+</div>
+<div class="preloader">
+    <div class="loader"></div>
+  </div> 
+  <script src="main.js" ></script> 
+
+</body>
+</html>
