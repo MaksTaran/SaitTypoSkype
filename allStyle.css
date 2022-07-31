@@ -476,6 +476,56 @@ color: #767676;
             margin-top: 25px;
         }
 }
+@media screen and  (max-width:415px) {
+    .logo{
+        margin-left: -120px;
+       height: 65px;
+        background-size: 40%;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 29px;
+        background-position-y: 12px;
+        background-position-x: 40px;
+        }
+        .headerContainer{
+            width: 245px; 
+            height: 35px;
+        }
+        .buttonContainer{
+            width: 100%;
+        }
+        .themChange{
+            display: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 10px;
+            background-size: 50%;
+        }
+        .servicePhone{
+           width: 16px; 
+        }
+        .service{
+            width: 120px;
+            height: 35px;
+            border-radius: 10px;
+            
+        }
+        .userImg{
+           display: none;
+        }
+        .close{
+            width: 35px;
+            height: 35px;
+            border-radius: 10px;
+            background-size: 30%;
+        }
+        .leftSection{
+            width: 250px;
+            margin-left: 2px;
+        }
+        
+    }
 /* загрузка сайта */
 .preloader {
     display: flex;
